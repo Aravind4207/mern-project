@@ -14,7 +14,7 @@ function CategoryPages() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/products/category/${categoryName}`)
+      .get(`https://mern-project-eg6t.onrender.com/api/products/category/${categoryName}`)
       .then((res) => setProducts(res.data))
       .catch((err) => console.log(err));
   }, [categoryName]);
@@ -34,7 +34,7 @@ function CategoryPages() {
               <div className="card product-card h-100 shadow-sm">
                 <div style={{ height: "220px", padding: "15px" }}>
                   <img
-                    src={`http://localhost:5000/uploads/${product.image}`}
+                    src={`https://mern-project-eg6t.onrender.com/uploads/${product.image}`}
                     alt={product.name}
                     style={{
                       width: "100%",

@@ -23,7 +23,7 @@ const HomePage = () => {
   // Fetch all products
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/products/")
+      .get("https://mern-project-eg6t.onrender.com/api/products/")
       .then((res) => setProducts(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -61,7 +61,7 @@ const HomePage = () => {
             {/* Image */}
             <div style={{ height: "220px", padding: "15px" }}>
               <img
-                src={`http://localhost:5000/uploads/${product.image}`}
+                src={`https://mern-project-eg6t.onrender.com/uploads/${product.image}`}
                 alt={product.name}
                 style={{
                   width: "100%",

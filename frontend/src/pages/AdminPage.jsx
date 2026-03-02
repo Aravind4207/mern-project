@@ -20,7 +20,7 @@ const AdminPage = () => {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/products/add",
+        "https://mern-project-eg6t.onrender.com/api/products/add",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },

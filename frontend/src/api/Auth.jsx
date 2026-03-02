@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:5000/api/auth";
+const API = "https://mern-project-eg6t.onrender.com/api/auth";
 
 export const registerUser = async (data) => {
   const res = await axios.post(`${API}/register`, data);

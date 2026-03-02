@@ -34,7 +34,7 @@ function CartPage() {
                 <div className="flip-card-front card p-3 text-center">
                   <div style={{ height: "220px", padding: "15px" }}>
                     <img
-                      src={`http://localhost:5000/uploads/${item.image}`}
+                      src={`https://mern-project-eg6t.onrender.com/uploads/${item.image}`}
                       alt={item.name}
                       style={{
                         width: "100%",
