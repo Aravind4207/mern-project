@@ -12,6 +12,8 @@ const router = express.Router();
 router.post("/register", async (req, res)  => {
   try {
     const { name, email, password } = req.body;
+    
+
 
     const normalizedEmail = email.toLowerCase();
 
@@ -30,17 +32,17 @@ router.post("/register", async (req, res)  => {
       password: hashedPassword,
     } );
 
-    // const token = jwt.sign(
-    //   { id: user._id },
-    //   process.env.JWT_SECRET,
-    //   { expiresIn: "15m" }
-    // );
+    const token = jwt.sign(
+      { id: user._id },
+      process.env.JWT_SECRET,
+      { expiresIn: "4d" }
+    );
 
-    // const refreshToken = jwt.sign(
-    //   { id: user._id },
-    //   process.env.JWT_REFRESH_SECRET,
-    //   { expiresIn: "7d" }
-    // );
+    const refreshToken = jwt.sign(
+      { id: user._id },
+      process.env.JWT_REFRESH_SECRET,
+      { expiresIn: "7d" }
+    );
 
     res.status(201).json({
       _id: user._id,
@@ -48,6 +50,7 @@ router.post("/register", async (req, res)  => {
       email: user.email,
       token,
       refreshToken,
+      
     });
 
   } catch (error) {
